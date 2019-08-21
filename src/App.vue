@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input type="text" v-model="a.b">
+    <test v-model="a"/>
+    <p>{{a.b}}</p>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import test from './components/test'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    test
+  },
+  data() {
+    return {
+      a: {}
+    }
   }
 }
 </script>
