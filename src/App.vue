@@ -1,25 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <input type="text" v-model="a.b">
-    <test v-model="a"/>
-    <p>{{a.b}}</p>
+    <el-menu
+       default-active="2"
+       class="el-menu-vertical-demo menu-list"
+       @open="handleOpen"
+       @close="handleClose"
+       background-color="#409EFF"
+       text-color="#fff"
+       active-text-color="#67C23A"
+    >
+      <el-menu-item>
+        <router-link to="/FORM">FORM</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/COMPUTER">COMPUTER</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/SLOT">SLOT</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/V_IF&&V_FOR">V_IF&&V_FOR</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="TwoWayDataBinding">TwoWayDataBinding</router-link>
+      </el-menu-item>
+    </el-menu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import test from './components/test'
+
 export default {
   name: 'app',
-  components: {
-    test
-  },
-  data() {
-    return {
-      a: {}
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
     }
-  }
+  },
 }
 </script>
 
@@ -31,5 +52,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+a{
+  text-decoration:none;
+  color:#fff;
+}
+li{
+  list-style: none;
+  text-align: center;
+  width: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px !important;
+}
+.menu-list{
+  width: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 </style>

@@ -2,9 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HelloWorld from "../components/HelloWorld";
 import FORM from "../components/FORM";
-import SLOT from "../components/SLOT";
+import SLOT from "../components/SLOTT";
 import VIF from "../components/V_IF&&V_FOR";
 import COMPUTER from "../components/COMPUTER";
+import TwoWayDataBinding from "../components/TwoWayDataBinding";
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = new VueRouter({
             name:'VIF',
             component:VIF,
         },
+        {
+            path:'/TwoWayDataBinding',
+            name:'TwoWayDataBinding',
+            component:TwoWayDataBinding,
+        }
     ],
 });
 export default routes;
