@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HelloWorld from "../components/HelloWorld";
+import Parent from "../components/Parenst";
 import FORM from "../components/FORM";
 import SLOT from "../components/SLOTT";
 import VIF from "../components/V_IF&&V_FOR";
 import COMPUTER from "../components/COMPUTER";
-import TwoWayDataBinding from "../components/TwoWayDataBinding";
+import Child from "../components/Child";
 
 Vue.use(VueRouter);
 
@@ -13,8 +13,8 @@ const routes = new VueRouter({
     routes:[
         {
             path:'/',
-            name:'HelloWorld',
-            component:HelloWorld,
+            name:'Parent',
+            component:Parent,
         },
         {
             path:'/FORM',
@@ -37,9 +37,9 @@ const routes = new VueRouter({
             component:VIF,
         },
         {
-            path:'/TwoWayDataBinding',
-            name:'TwoWayDataBinding',
-            component:TwoWayDataBinding,
+            path:'/Child',
+            name:'Child',
+            component:Child,
         }
     ],
 });

@@ -22,7 +22,7 @@
         <router-link to="/V_IF&&V_FOR">V_IF&&V_FOR</router-link>
       </el-menu-item>
       <el-menu-item>
-        <router-link to="TwoWayDataBinding">TwoWayDataBinding</router-link>
+        <router-link to="/Child">Child</router-link>
       </el-menu-item>
     </el-menu>
     <router-view></router-view>
@@ -35,9 +35,11 @@ export default {
   name: 'app',
   methods: {
     handleOpen(key, keyPath) {
+      // eslint-disable-next-line
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
+      // eslint-disable-next-line
       console.log(key, keyPath);
     }
   },
