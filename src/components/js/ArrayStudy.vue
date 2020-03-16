@@ -1,14 +1,14 @@
 <template>
     <div>
         <h1>
-            v-if&&v-for
+            数组属性联系
         </h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'V_IF&&V_FOR',
+        name: "ArrayStudy"
     }
 </script>
 

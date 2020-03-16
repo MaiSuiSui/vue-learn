@@ -8,7 +8,7 @@
     <Child
             :parentComponentData="this.parentData"
             :parentNum="this.parentNum"
-            v-on:addParentNum="newNum"
+            @input="newNum"
     />
     <Vmodel
       v-model="parentNum"
@@ -30,7 +30,6 @@ export default {
   },
   methods:{
     newNum(newParentNum){
-      console.log('newParentNum',newParentNum);
       this.parentNum = newParentNum;
     },
   }

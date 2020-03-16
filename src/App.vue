@@ -24,6 +24,15 @@
       <el-menu-item>
         <router-link to="/Child">Child</router-link>
       </el-menu-item>
+      <el-menu-item>
+        <router-link to="/ArrayStudy">ArrayStudy</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/syncLearn">syncLearn</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/YiBuFunctionCallback">YiBuFunctionCallback</router-link>
+      </el-menu-item>
     </el-menu>
     <router-view></router-view>
   </div>
@@ -69,7 +78,7 @@ li{
 }
 .menu-list{
   width: 10%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   text-align: center;

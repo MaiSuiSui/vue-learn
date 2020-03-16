@@ -6,6 +6,9 @@ import SLOT from "../components/SLOTT";
 import VIF from "../components/V_IF&&V_FOR";
 import COMPUTER from "../components/COMPUTER";
 import Child from "../components/Child";
+import ArrayStudy from "../components/js/ArrayStudy";
+import SyncParentLearn from "../components/vue/SyncParentLearn";
+import YiBuFunctionCallback from "../components/js/YiBuFunctionCallback";
 
 Vue.use(VueRouter);
 
@@ -40,6 +43,21 @@ const routes = new VueRouter({
             path:'/Child',
             name:'Child',
             component:Child,
+        },
+        {
+            path:'/ArrayStudy',
+            name:'ArrayStudy',
+            component:ArrayStudy,
+        },
+        {
+            path:'/syncLearn',
+            name:'SyncParentLearn',
+            component:SyncParentLearn,
+        },
+        {
+            path:'/YiBuFunctionCallback',
+            name:'YiBuFunctionCallback',
+            component:YiBuFunctionCallback,
         }
     ],
 });
