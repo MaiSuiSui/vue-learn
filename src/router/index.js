@@ -9,6 +9,7 @@ import Child from "../components/Child";
 import ArrayStudy from "../components/js/ArrayStudy";
 import SyncParentLearn from "../components/vue/SyncParentLearn";
 import YiBuFunctionCallback from "../components/js/YiBuFunctionCallback";
+import Copy from "../components/vue/Copy";
 
 Vue.use(VueRouter);
 
@@ -58,6 +59,11 @@ const routes = new VueRouter({
             path:'/YiBuFunctionCallback',
             name:'YiBuFunctionCallback',
             component:YiBuFunctionCallback,
+        },
+        {
+            path:'/Copy',
+            name:'Copy',
+            component:Copy,
         }
     ],
 });

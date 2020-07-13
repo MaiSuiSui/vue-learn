@@ -3,6 +3,7 @@
     <el-menu
        default-active="2"
        class="el-menu-vertical-demo menu-list"
+       style="margin-right: 3%;padding-left: 2%;"
        @open="handleOpen"
        @close="handleClose"
        background-color="#409EFF"
@@ -32,6 +33,9 @@
       </el-menu-item>
       <el-menu-item>
         <router-link to="/YiBuFunctionCallback">YiBuFunctionCallback</router-link>
+      </el-menu-item>
+      <el-menu-item>
+        <router-link to="/Copy">Copy</router-link>
       </el-menu-item>
     </el-menu>
     <router-view></router-view>
@@ -63,6 +67,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  justify-content: left;
 }
 a{
   text-decoration:none;
@@ -78,9 +84,7 @@ li{
 }
 .menu-list{
   width: 10%;
-  position: fixed;
-  top: 0;
-  left: 0;
   text-align: center;
+  margin-right: 5%;
 }
 </style>
