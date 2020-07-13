@@ -78,7 +78,6 @@
         methods:{
             uniqueId(){
                 let idArr = [];
-                debugger
                 this.arr.forEach(item => idArr.push(item.id));
                 let maxId = Math.max(...idArr);
                 return maxId;
@@ -90,6 +89,22 @@
                 //这一步保证了每个元素key得唯一性。
                 copyOne.id = this.uniqueId() + 1;
                 this.arr.splice(i+1,0,copyOne);
+            },
+            async move(i, kind) {
+                if (kind === 'up' && i > 0) {
+                    const item = this.arr.splice(i, 1)[0];
+                    this.arr.splice(i - 1, 0, item);
+                } else if (kind === 'down' && i < this.arr.length - 1) {
+                    this.arr.splice(i + 1, 0, this.moduleArr.splice(i, 1)[0]);
+                } else if (kind === 'sticky' && i !== 0) {
+                    this.arr.splice(0, 0, this.arr.splice(i, 1)[0]);
+                } else if (kind === 'setTail' && i !== this.arr.length - 1) {
+                    this.arr.splice(
+                        this.arr.length - 1,
+                        0,
+                        this.arr.splice(i, 1)[0]
+                    );
+                }
             }
         }
     }
