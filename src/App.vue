@@ -10,32 +10,8 @@
        text-color="#fff"
        active-text-color="#67C23A"
     >
-      <el-menu-item>
-        <router-link to="/FORM">FORM</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/COMPUTER">COMPUTER</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/SLOT">SLOT</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/V_IF&&V_FOR">V_IF&&V_FOR</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/Child">Child</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/ArrayStudy">ArrayStudy</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/syncLearn">syncLearn</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/YiBuFunctionCallback">YiBuFunctionCallback</router-link>
-      </el-menu-item>
-      <el-menu-item>
-        <router-link to="/Copy">Copy</router-link>
+      <el-menu-item v-for="item in routes" :key="item.name">
+        <router-link :to="`${item.path}`">{{item.name}}</router-link>
       </el-menu-item>
     </el-menu>
     <router-view></router-view>
@@ -43,9 +19,14 @@
 </template>
 
 <script>
-
+import routes from './router/index';
 export default {
   name: 'app',
+  data(){
+    return {
+      routes:routes.options.routes
+    };
+  },
   methods: {
     handleOpen(key, keyPath) {
       // eslint-disable-next-line
