@@ -41,24 +41,28 @@
                             plain
                             icon="el-icon-upload2"
                             @click="move(index, 'sticky')"
+                            v-if="index !== 0"
                     ></elButton>
                     <elButton
                             size="mini"
                             plain
                             icon="el-icon-top"
                             @click="move(index, 'up')"
+                            v-if="index !== 0"
                     ></elButton>
                     <elButton
                             size="mini"
                             plain
                             icon="el-icon-download"
                             @click="move(index, 'setTail')"
+                            v-if="index !== arr.length-1"
                     ></elButton>
                     <elButton
                             size="mini"
                             plain
                             icon="el-icon-bottom"
                             @click="move(index, 'down')"
+                            v-if="index !== arr.length-1"
                     ></elButton>
                 </elButtonGroup>
             </li>
@@ -90,12 +94,12 @@
                 copyOne.id = this.uniqueId() + 1;
                 this.arr.splice(i+1,0,copyOne);
             },
+            //因为移位函数在元素成功移位之后会调用重复的列表更新函数，会有较多的重复代码，故选择增加一个移位类型的字段标记。
             async move(i, kind) {
                 if (kind === 'up' && i > 0) {
-                    const item = this.arr.splice(i, 1)[0];
-                    this.arr.splice(i - 1, 0, item);
+                    this.arr.splice(i - 1, 0, this.arr.splice(i, 1)[0]);
                 } else if (kind === 'down' && i < this.arr.length - 1) {
-                    this.arr.splice(i + 1, 0, this.moduleArr.splice(i, 1)[0]);
+                    this.arr.splice(i + 1, 0, this.arr.splice(i, 1)[0]);
                 } else if (kind === 'sticky' && i !== 0) {
                     this.arr.splice(0, 0, this.arr.splice(i, 1)[0]);
                 } else if (kind === 'setTail' && i !== this.arr.length - 1) {
