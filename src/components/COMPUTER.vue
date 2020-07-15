@@ -8,7 +8,9 @@
 
 <script>
 export default {
-    name: 'COPMUTER',
+    name: 'COPMUTER'
+
+
 }
 </script>
 
