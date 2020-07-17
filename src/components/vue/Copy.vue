@@ -1,7 +1,7 @@
 <template>
     <div>
-        <ul  v-for="(item,index) in arr">
-            <li key="item.id">
+        <ul>
+            <li v-for="(item,index) in arr" :key="item.id">
                 <div class="toDo">
                     <elButton
                             size="mini"
