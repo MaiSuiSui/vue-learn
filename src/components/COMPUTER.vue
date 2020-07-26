@@ -9,9 +9,7 @@
 <script>
 export default {
     name: 'COPMUTER'
-
-
-}
+};
 </script>
 
 <style scoped>
